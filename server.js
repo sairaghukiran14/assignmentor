@@ -31,6 +31,9 @@ const Mentor = mongoose.model("Mentor", mentorSchema);
 const Student = mongoose.model("Student", studentSchema);
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("AssignMentor server started");
+});
 app.post("/mentors", async (req, res) => {
   const { name, email } = req.body;
   try {
